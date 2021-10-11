@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% autoescape on %}
+<h1>Edit</h1>
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button class="btn btn-primary" type="submit">Edit & Save</button>
+</form>
+{% endautoescape %}
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="article-entry">
+<h2>{{ object.title }}</h2>
+<p>by {{ object.author }} | {{ object.date }}</p>
+<p>{{ object.text|safe }}</p>
+</div>
+{% if user.is_authenticated and object.author == user %}
+<p><a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> |
+<a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Delete</a></p>
+{% endif %}
+<div class="card-footer">
+{% for comment in object.comments.all %}
+<p>
+<span class="font-weight-bold">
+{{ comment.author }} &middot;
+</span>
+{{ comment }}
+<span style="color:grey;"> {{ comment.date }}</span>
+</p>
+{% endfor %}
+</div>
+<form method="POST">
+{% csrf_token %}
+<div class="messagebox">
+{{ form.as_p }}
+<button class="btn btn-primary" type="submit">
+Write Comment
+</button>
+</div>
+</form>
+<br/>
+<p>Back to <a href="{% url 'home' %}">Main Page</a></p>
+{% endblock content %}
