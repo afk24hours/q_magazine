@@ -1,5 +1,5 @@
 import os
-import django_heroku
+import django-heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
