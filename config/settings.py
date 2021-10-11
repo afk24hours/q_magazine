@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -212,8 +213,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # EMAIL MANAGEMENT
 DEFAULT_FROM_EMAIL = 'Administator'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sinister.kz@gmail.com'
-EMAIL_HOST_PASSWORD = 'concerto'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+django_heroku.settings(locals())
