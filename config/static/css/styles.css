@@ -11496,9 +11496,8 @@ html {
   background-color: #1a252f;
 }
 
-
 .glow {
-  font-size: 80px;
+  font-size: 2pem;
   color: #fff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;

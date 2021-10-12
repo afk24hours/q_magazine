@@ -7,8 +7,8 @@
 <p>{{ object.text|safe }}</p>
 </div>
 {% if user.is_authenticated and object.author == user %}
-<p><a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> |
-<a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Delete</a></p>
+<p><a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Редактировать</a> |
+<a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Удалить</a></p>
 {% endif %}
 <div class="card-footer">
 {% for comment in object.comments.all %}
@@ -26,11 +26,11 @@
 <div class="messagebox">
 {{ form.as_p }}
 <button class="btn btn-primary" type="submit">
-Write Comment
+Написать
 </button>
 </div>
 </form>
 <br/>
-<p>Back to <a href="{% url 'home' %}">Main Page</a></p>
+<p>Назад на <a href="{% url 'home' %}">главную страницу</a></p>
 </div>
 {% endblock content %}

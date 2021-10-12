@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}My Posts{% endblock title %}
+{% block title %}Мои статьи{% endblock title %}
 
 {% block content %}
 <div class="container">
-<h1>My Posts: {{ object_list|length }}</h1>
+<h1>Мои статьи: {{ object_list|length }}</h1>
 </div>
 {% for article in object_list %}
 <div class="container">
@@ -19,9 +19,9 @@
 </div>
 <div class="card-footer text-center text-muted">
 {% if user == article.author %}
-<a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> | <a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Delete</a>
+<a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Редактировать</a> | <a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Удалить</a>
 {% else %}
-<a type="button" class="btn btn-primary" disabled>Edit</a> | <a type="button" class="btn btn-primary" disabled>Delete</a>
+<a type="button" class="btn btn-primary" disabled>Редактировать</a> | <a type="button" class="btn btn-primary" disabled>Удалить</a>
 {% endif %}
 </div>
 </div>

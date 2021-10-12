@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}My Comments{% endblock title %}
+{% block title %}Мои комментарии{% endblock title %}
 
 {% block content %}
 <div class="container">
-<h1>My Comments: {{ object_list|length }}</h1>
+<h1>Мои комментарии: {{ object_list|length }}</h1>
 </div>
 {% for comment in object_list %}
 <div class="container">

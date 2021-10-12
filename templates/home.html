@@ -2,9 +2,7 @@
 {% block title %}Q MAGAZINE{% endblock title %}
 
 {% block content %}
-<br/>
-
-        {% for article in object_list %}
+{% for article in object_list %}
 <div class="container">
 <div class="card text-white bg-dark mb-3 mx-auto">
 <div class="card-header">
@@ -17,15 +15,13 @@
 </div>
 <div class="card-footer text-center text-muted">
 {% if user == article.author %}
-<a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> | <a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Delete</a>
+<a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Редактировать</a> | <a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Удалить</a>
 {% else %}
-<a type="button" class="btn btn-primary" disabled>Edit</a>
-    <a type="button" class="btn btn-primary" disabled>Delete</a>
+<a type="button" class="btn btn-primary" disabled>Редактировать</a>
+    <a type="button" class="btn btn-primary" disabled>Удалить</a>
 {% endif %}
 </div>
 </div>
 </div>
-</div>
-</header>
 {% endfor %}
 {% endblock content %}

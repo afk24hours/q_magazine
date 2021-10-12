@@ -76,8 +76,8 @@
 }
 
 body {
-  padding-top: 120px;
   margin: 0;
+  padding-top: 120px;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
@@ -11497,7 +11497,7 @@ html {
 }
 
 .glow {
-  font-size: 80px;
+  font-size: 2pem;
   color: #fff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
