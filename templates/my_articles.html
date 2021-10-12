@@ -2,8 +2,11 @@
 {% block title %}My Posts{% endblock title %}
 
 {% block content %}
+<div class="container">
 <h1>My Posts: {{ object_list|length }}</h1>
+</div>
 {% for article in object_list %}
+<div class="container">
 <div class="jumbotron">
 <div class="card text-white bg-dark mb-3">
 <div class="card-header">
@@ -23,6 +26,7 @@
 </div>
 </div>
 <br />
+</div>
 </div>
 {% endfor %}
 {% endblock content %}

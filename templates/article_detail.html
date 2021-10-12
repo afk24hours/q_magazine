@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
 <div class="article-entry">
 <h2>{{ object.title }}</h2>
 <p>by {{ object.author }} | {{ object.date }}</p>
@@ -31,4 +32,5 @@ Write Comment
 </form>
 <br/>
 <p>Back to <a href="{% url 'home' %}">Main Page</a></p>
+</div>
 {% endblock content %}

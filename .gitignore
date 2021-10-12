@@ -1,2 +1,3 @@
 __pycache__/
 db.sqlite3
+config/settings_2.py

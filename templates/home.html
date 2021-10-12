@@ -3,9 +3,10 @@
 
 {% block content %}
 <br/>
-{% for article in object_list %}
-<div class="jumbotron">
-<div class="card text-white bg-dark mb-3">
+
+        {% for article in object_list %}
+<div class="container">
+<div class="card text-white bg-dark mb-3 mx-auto">
 <div class="card-header">
 <span class="font-weight-bold"><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></span> &middot;
 <span class="text-muted">by {{ article.author }} |
@@ -18,11 +19,13 @@
 {% if user == article.author %}
 <a type="button" class="btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> | <a type="button" class="btn btn-primary" href="{% url 'article_delete' article.pk %}">Delete</a>
 {% else %}
-<a type="button" class="btn btn-primary" disabled>Edit</a> | <a type="button" class="btn btn-primary" disabled>Delete</a>
+<a type="button" class="btn btn-primary" disabled>Edit</a>
+    <a type="button" class="btn btn-primary" disabled>Delete</a>
 {% endif %}
 </div>
 </div>
-<br />
 </div>
+</div>
+</header>
 {% endfor %}
 {% endblock content %}
